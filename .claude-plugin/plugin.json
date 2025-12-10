@@ -1,10 +1,12 @@
 {
   "name": "dream",
-  "version": "0.1.0",
-  "description": "Deep dream about the subject to examine it deeply",
+  "version": "0.2.0",
+  "description": "Deep dream about the target to examine it deeply",
   "author": {
     "name": "alagunto"
   },
   "repository": "https://github.com/alagunto/dream",
-  "commands": ["./commands/dream.md"]
+  "commands": ["./commands/dream.md"],
+  "skills": ["./skills/metaphorise"],
+  "agents": ["./agents/morpheus.md"]
 }

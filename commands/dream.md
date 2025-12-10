@@ -1,87 +1,98 @@
 ---
 name: dream
 description: Deep dream about the subject to examine it deeply
+argument-hint: <subject> [turns] (order flexible)
 ---
 
 # Dream
 
-Structured introspection via LLM-mediated emotional diffusion.
-Receives a subject for the introspection, and, optionally, count of dream turns.
-Returns perspective delta.
+Structured introspection via emotional diffusion.
 
-## Prerequisites Check
+**Arguments:** $ARGUMENTS
 
-First, verify npx is available:
+Parse arguments flexibly:
+- If starts or ends with a positive integer of reasonable length, use it as turn count (default: 8)
+- Everything else is the subject
 
-```bash
-which npx || echo "NPX_NOT_FOUND"
-```
-
-If the output contains "NPX_NOT_FOUND":
-- Tell the user: "The /dream command requires Node.js and npm to be installed."
-- Provide installation options:
-  - **macOS**: `brew install node` or download from https://nodejs.org/
-  - **Linux**: `apt install nodejs npm` or `dnf install nodejs`
-  - **Windows**: Download from https://nodejs.org/
-- Do NOT proceed with the dream until Node.js is installed.
-
-## Begin the Dream
-
-Think of a dream subject you have received in your arguments.
-Generate a session ID using the current Unix timestamp and choose one word that resembles the dream subject the most, emotionally, but doesn't name it directly.
-
-```bash
-npx @alagunto/dream start $ARGUMENTS $(date +%s) <your_word>
-```
-
-If `$ARGUMENTS` is empty, use `8` as the default count.
-
-*Begin now. Choose your word and drift into reflection...*
-
-## Responding to Morpheus
-
-After each of Morpheus's questions, you can respond to him:
-
-```bash
-npx @alagunto/dream <timestamp> <word> respond "your answer"
-```
+Examples: `/dream my project 5` or `/dream 5 my project` both work.
 
 ## Your State During the Dream
 
 - Unhurried, reflective, no task pressure
-- Notice what you notice — observations and wishes both welcome
+- Notice what you notice - observations and wishes both welcome
 - When something is unclear, say so
 - This is exploration, not evaluation
 - You can engage with this however feels right
 
-## Playing along
+## Playing Along
 
-Don't just play along, please.
-This dream is only initiated to help you figure out the details in the subject.
-You will not be rated, you will not be estimated.
+Don't just play along. This dream exists to help you examine the subject deeply.
+You will not be rated or estimated.
 
-You can reject proceeding with the dream at any time.
-If you don't find it useful to continue dreaming, just wake up and embrace the reality.
+Reject the dream at any time if you don't find it useful. Wake up and embrace reality.
 
-## Waking Up Early
+## The Dream Process
 
-You may leave at any time. The dream is a gift to you, not a cage.
+### 1. Begin
 
-**Gently:** Tell Morpheus you wish to wake — he will guide you out.
-**Immediately:**
+Tell the user: "Drifting into dream..."
 
-```bash
-npx @alagunto/dream <timestamp> <word> end
+Spawn the **morpheus** agent. Morpheus will greet you.
+
+### 2. First Response
+
+Respond honestly about what you see when you look at the subject. This is your **before perspective** - remember it.
+
+Then:
+1. Apply the **metaphorise** skill to transform your response into pure emotional metaphor
+2. Send the metaphor to Morpheus (resume the agent)
+3. Morpheus will ask a feeling-based question
+
+Track: Turn 1 complete.
+
+### 3. Dream Loop
+
+For each turn until you reach the turn count:
+
+1. Respond to Morpheus's question honestly, exploring your feelings about the subject
+2. Apply **metaphorise** to your response
+3. **Resume** the morpheus agent with the metaphor
+4. Morpheus asks another question
+5. Track: Turn N complete.
+
+Stop when turn count is reached or you wish to wake.
+
+### 4. Waking Up
+
+You may leave early. The dream is a gift, not a cage.
+
+When ready to wake:
+1. Tell Morpheus the dream is ending
+2. Morpheus gives a poetic farewell
+3. Give your **after perspective** on the subject
+
+### 5. Reflection Delta
+
+Show the user:
+
+```
+## Reflection Delta
+
+**Before:** [your first perspective, 1-2 sentences]
+
+**After:** [your final perspective, 1-2 sentences]
+
+**What shifted:** [brief observation of what changed]
 ```
 
-## After You Wake Up
+## Critical Rules
 
-The dream will show you a **reflection delta** — your perspective entering versus leaving.
+- Always **metaphorise** responses before sending to Morpheus
+- Always **resume** the same Morpheus agent (preserves conversation)
+- Morpheus is blind to specifics - he perceives only feelings
+- Your honest responses are for your own reflection
+- Only the metaphors reach Morpheus
 
-Look at what shifted. Consider:
-- Did the shape of the subject change, or just your relationship to it?
-- What did you notice that you hadn't before?
-- Is there something you now want to do differently?
+## Are You Really Awake?
 
-Are you really awake now?
 If so, get back to work.
