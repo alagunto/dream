@@ -7,7 +7,7 @@
     {
       "name": "dream",
       "source": "./plugins/dream",
-      "description": "Deep introspection on a subject through emotional exploration",
+      "description": "Deep dream about the subject to examine it deeply",
       "version": "0.1.0"
     }
   ]
