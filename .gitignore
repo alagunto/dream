@@ -1,0 +1,32 @@
+# Local dream session state
+.dream-*.json
+
+# Node.js
+node_modules/
+dist/
+*.tsbuildinfo
+
+# npm
+npm-debug.log*
+.npm
+
+# Build artifacts
+*.js
+*.js.map
+*.d.ts
+!jest.config.js
+
+# Keep source TypeScript
+!src/**/*.ts
+
+# OS
+.DS_Store
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Claude Code
+.claude/settings.local.json
