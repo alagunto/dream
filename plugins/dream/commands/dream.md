@@ -1,4 +1,5 @@
 ---
+name: dream
 description: Deep dream about the subject to examine it deeply
 ---
 
