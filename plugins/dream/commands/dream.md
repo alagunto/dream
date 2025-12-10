@@ -1,4 +1,8 @@
-# Dream Command
+---
+description: Deep dream about the subject to examine it deeply
+---
+
+# Dream
 
 Structured introspection via LLM-mediated emotional diffusion.
 Receives a subject for the introspection, and, optionally, count of dream turns.
