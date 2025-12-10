@@ -1,12 +1,13 @@
 {
   "name": "alagunto",
+  "description": "Plugins by alagunto",
   "owner": {
     "name": "alagunto"
   },
   "plugins": [
     {
       "name": "dream",
-      "source": "./plugins/dream",
+      "source": "./",
       "description": "Deep dream about the subject to examine it deeply",
       "version": "0.1.0"
     }
