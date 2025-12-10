@@ -6,5 +6,5 @@
     "name": "alagunto"
   },
   "repository": "https://github.com/alagunto/dream",
-  "commands": ["../commands/"]
+  "commands": ["./commands/dream.md"]
 }
