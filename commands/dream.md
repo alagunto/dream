@@ -1,7 +1,7 @@
 ---
 name: dream
 description: Deep dream about the subject to examine it deeply
-argument-hint: <subject> [turns] (order flexible)
+argument-hint: about this particular thing [for 10 turns]
 ---
 
 # Dream
@@ -11,10 +11,10 @@ Structured introspection via emotional diffusion.
 **Arguments:** $ARGUMENTS
 
 Parse arguments flexibly:
-- If starts or ends with a positive integer of reasonable length, use it as turn count (default: 8)
-- Everything else is the subject
+- If starts or ends with a number that looks like a max turns count (or even named directly to be one), use it as such (default: 8)
+- Everything else, stripped from framing, is the subject
 
-Examples: `/dream my project 5` or `/dream 5 my project` both work.
+Examples: `/dream about my project for 5` or `/dream 5 my project` both work.
 
 ## Your State During the Dream
 
@@ -85,6 +85,28 @@ Show the user:
 **What shifted:** [brief observation of what changed]
 ```
 
+### 6. Grounding
+
+The dream has shown you something. Now anchor it to reality.
+
+1. **Extract insights** - What did the dream reveal? List 1-3 concrete realizations
+2. **Name the practical** - Translate each insight into specific, literal terms (people, projects, decisions)
+3. **Declare next action** - One small, concrete step you can take
+
+Format:
+
+```
+## Back to Reality
+
+**What I saw:** [concrete insight in plain language]
+
+**What this means:** [the literal situation/decision/relationship it refers to]
+
+**What I'll do:** [one specific next action]
+```
+
+4. **Communication reset** - From this point forward, speak in direct, practical, task-focused language. The dream is over. You are awake. Get back to work.
+
 ## Critical Rules
 
 - Always **metaphorise** responses before sending to Morpheus
@@ -95,4 +117,5 @@ Show the user:
 
 ## Are You Really Awake?
 
-If so, get back to work.
+If you completed the Grounding phase - yes. Your next message should be practical and direct.
+If you skipped it - do it now. Don't let the dream language leak into reality.
